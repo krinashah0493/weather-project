@@ -1,0 +1,51 @@
+<div style="width: 100%;">
+  <form class="example-form ml-auto mr-auto">
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Enter City"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+        (keydown)="fetchWeather($event)"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div class="display-weather-details ml-auto mr-auto">
+    <div class="row">
+      <div class="ml-auto mr-auto" style="font-size: 1.5em">
+        Weather at {{ city }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+        <div class="temperature-div">
+          <div class="ml-auto mr-auto heading">Temperature</div>
+          <div>
+            <span class="temp-value"
+              >{{ temperature
+              }}<sup style="top: -1.65em; font-size: 30%">&#8451;</sup></span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="wind-div">
+          <div class="mr-auto">Wind: {{ wind }} km/hr</div>
+        </div>
+        <div class="wind-div">
+          <div class="mr-auto">Humidity: {{ humidity }} %</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  color: pink;
+  background: black;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.display-weather-details {
+  min-width: 150px;
+  max-width: 500px;
+  border: 1px solid black;
+  text-align: center;
+  background: floralwhite;
+}
+
+.temperature-div {
+  height: 100px;
+
+  .heading {
+    font-size: 1.5em;
+  }
+  .temp-value {
+    font-size: 3em;
+  }
+}
